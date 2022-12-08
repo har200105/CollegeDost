@@ -4,7 +4,6 @@ A web app to help college freshers through a social media way by connecting them
 We also have the feature of searching users,resources and sorting posts on the basis of hashtags.
  
 
-# All the phase changes can only be done  by the admin and other random users can not do it.
 
 # Tech stacks used:
 * React JS
