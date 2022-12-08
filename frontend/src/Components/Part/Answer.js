@@ -2,8 +2,8 @@ import React from "react";
 import "./Answer.css";
 import { Link } from "react-router-dom";
 
-export default function Answer() {
-  
+export default function Answer(props) {
+
   return (
     <div className="ans">
       <div className="user-title">
