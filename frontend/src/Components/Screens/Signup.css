@@ -1,0 +1,359 @@
+.signup {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 200px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: inherit;
+  box-sizing: border-box;
+  /* background: -webkit-linear-gradient(bottom right, #010101, #585f66);
+  background: -moz-linear-gradient(bottom right, #010101, #585f66);
+  background: linear-gradient(to top left, #010101, #585f66); */
+}
+
+.signup {
+  background: hsla(280, 84%, 41%, 1);
+  background: linear-gradient(
+    245deg,
+    hsla(280, 84%, 41%, 1) 0%,
+    hsla(218, 97%, 56%, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    245deg,
+    hsla(280, 84%, 41%, 1) 0%,
+    hsla(218, 97%, 56%, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    245deg,
+    hsla(280, 84%, 41%, 1) 0%,
+    hsla(218, 97%, 56%, 1) 100%
+  );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#8711C1", endColorstr="#2472FC", GradientType=1);
+}
+
+.signup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+
+.signup form {
+  width: 80%;
+  /* scroll-behavior: auto; */
+  margin-top: 10vh;
+  margin-left: 10%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signup input {
+  font: inherit;
+  display: block;
+  width: 80%;
+  border: none;
+  background: transparent;
+  padding: 0.15rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  outline: none;
+  transition: 200ms ease-in;
+}
+
+.signup input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+.signup input:hover {
+  border: 1.5px solid #14faa2;
+}
+
+.signup input:focus {
+  width: 100%;
+  border: 2.5px solid #00a566;
+  height: 4vh;
+  transition: 200ms ease-in-out;
+}
+
+.signup #submit {
+  outline: none;
+  background: transparent;
+  color: white;
+  border: 2.5px solid white;
+  width: 17%;
+  height: 8vh;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 200ms ease-in;
+}
+
+.signup #submit:hover {
+  background-color: #14faa2;
+  border-color: #14faa2;
+  transition: 200ms ease-in;
+  width: 25%;
+  color: black;
+}
+
+.signup header {
+  position: fixed;
+  color: white;
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-left: 42%;
+  margin-top: 5px;
+  transition: 200ms ease-in;
+}
+
+.wrapper-header {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+form input {
+  padding: 5px 5px 5px 5px;
+  width: 50% !important;
+}
+
+form input:focus {
+  height: 40px !important;
+  width: 60% !important;
+}
+
+#toggle-mode {
+  margin-right: auto;
+  background: #2d92ff;
+  height: 7vh;
+  outline: none;
+  border: 2.5px solid #2d92ff;
+  margin-left: 10px;
+  color: white !important;
+  width: 10vw;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+#toggle-mode:hover {
+  background-color: #034b97 !important;
+  border: #2e8bee;
+  color: white;
+  transition: 200ms ease-in;
+}
+
+#toggle-mode:active {
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .signup form {
+    margin: auto;
+  }
+  .signup header {
+    margin-left: 25vh;
+  }
+  .signup form {
+    margin-top: 15% !important;
+  }
+  .signup #submit {
+    height: 40px;
+    width: 80px;
+    font-size: 1rem;
+  }
+  .avatars {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+  .avatars img {
+    height: 30px !important;
+    width: 30px !important;
+  }
+  .signup input {
+    width: 800px;
+  }
+  .login {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .signup header {
+    margin-top: 1%;
+    font-size: 1.8rem;
+    margin: auto;
+  }
+
+  form {
+    margin-top: 15% !important;
+  }
+  .signup #submit {
+    font-size: 0.6rem;
+    height: 40px;
+    width: 80px;
+  }
+  .signup form {
+    margin-top: 15%;
+    height: 40%;
+    margin: auto;
+  }
+  .signup form input {
+    margin-top: 1% !important;
+    margin-bottom: 1% !important;
+  }
+  .signup header {
+    margin-left: 30% !important;
+  }
+  .signup input {
+    width: 200px !important;
+  }
+  .signup input:hover {
+    width: 220px !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  .signup form {
+    margin-top: 3% !important;
+  }
+  .wrapper-header {
+    display: none;
+  }
+}
+
+.light {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.light form {
+  color: white;
+}
+
+.light input {
+  color: white;
+  border: 2px solid white;
+  transition: 100ms ease-in-out;
+}
+
+.light input::placeholder {
+  color: white !important;
+}
+
+.light #submit:hover {
+  background: black;
+  color: white;
+}
+
+.light input:hover {
+  border: 2.5px solid black;
+  transition: 40ms ease-in-out;
+}
+
+.light input:focus {
+  border: 3.5px solid black;
+  transition: 100ms ease-in-out;
+}
+
+.light #submit {
+  border: 2.5px solid white !important;
+  color: white;
+}
+
+.light header {
+  color: black;
+}
+
+.clg_option {
+  background-color: transparent;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 50% !important;
+  border: 2px solid white;
+}
+
+.clg_option option {
+  background: rgb(71, 71, 71);
+  border-radius: 10px;
+}
+
+.clg_option:hover {
+  border: 2.5px solid black;
+  transition: 50ms ease-in-out;
+}
+
+.clg_option:focus {
+  border: 3.5px solid black;
+  transition: 50ms ease-in-out;
+}
+
+.avatars img {
+  margin: 10px 10px 10px 10px;
+}
+
+.avatars button {
+  background: none;
+  border: none;
+}
+
+.avatars {
+  background-color: transparent;
+  border-radius: 25px;
+  border: 2px solid white;
+  display: grid;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.login_btn,
+.signup_btn {
+  background: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 5px 0px 5px;
+  margin-bottom: 0px;
+  color: white;
+  transition: 200ms ease-in;
+  border: 2px solid white;
+  font-weight: 600 !important;
+}
+
+.btn-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_btn:hover,
+.signup_btn:hover {
+  border: 2.5px solid white !important;
+  background: black !important;
+  transition: 200ms ease-in;
+  width: 300px;
+}
+
+.change1:hover span {
+  display: none;
+}
+
+.change1 button:hover::before {
+  content: "Login";
+  font-size: 1.8rem;
+}
+
+.change2 button:hover::before {
+  content: "Signup" !important;
+  font-size: 1.8rem;
+}

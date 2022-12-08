@@ -1,0 +1,17 @@
+.ans {
+    background: #99d98c;
+    width: 76%;
+    margin-left: 24%;
+    border-radius: 25px 25px 0 25px;
+    padding: 10px;
+    color: black;
+}
+
+.user-title {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.count {
+    float: right;
+}

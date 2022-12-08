@@ -1,0 +1,119 @@
+.admin {
+  background-color: #168aad;
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 15px;
+  height: 10vh;
+  background-color: #006d77;
+  color: white;
+}
+
+.logout {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.logout:hover {
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  transition: 100ms ease-in-out;
+}
+
+.admin_content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.admin_sidebar {
+  width: 18%;
+}
+
+.admin_feed {
+  width: 75%;
+}
+
+.admin_sidebar,
+.admin_feed {
+  background-color: #99d98c;
+}
+
+.admin_post {
+  margin: 10px 10px 10px 10px;
+  background-color: #184e77;
+  color: white !important;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+.delete {
+  margin-left: 90%;
+  background: transparent;
+  color: white;
+  border: none;
+}
+
+.admin_post_search {
+  margin-top: 10px;
+}
+
+.admin_post_search button {
+  border-radius: 10px;
+  outline: none;
+  color: black !important;
+  border: none;
+  background: transparent;
+  background: #d9ed92;
+  border: 2px solid #6b914a;
+  margin-left: 10px;
+  height: 40px;
+  padding: 5px 5px 5px 5px;
+}
+
+.admin_post_search input {
+  border-radius: 10px;
+
+  background: #d9ed92;
+  border: none;
+  height: 45px;
+  border: 2px solid #6b914a;
+  margin-left: 10px;
+  padding: 5px 5px 5px 5px;
+}
+
+/* .admin_post_search input::placeholder {
+  color: white;
+} */
+
+.admin_sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userid {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.user button {
+  background: transparent;
+  border: none;
+}
