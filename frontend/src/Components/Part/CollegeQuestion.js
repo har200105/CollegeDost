@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Que.css";
-import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
-import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
-import { ChatBubble, ThumbDownAltOutlined } from "@material-ui/icons";
-import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
+import {  ThumbDownAltOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Answer from "./Answer";
 import axios from "axios";
@@ -12,8 +9,6 @@ import AnswerModal from "./AnswerModal";
 import ReportIcon from "@material-ui/icons/Report";
 import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
 import { API } from "./API";
-import { Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
 import { useDispatch } from "react-redux";
 import { getCollegePosts } from "../../actions/collegePostAction";
 import { getUserposts, getUserUnivposts } from "../../actions/postAction";
@@ -123,7 +118,7 @@ export default function CollegeQuestion(props) {
   const addToAdmin = async (id) => {
     console.log(id);
     await axios.post(
-      "https://collegedost.herokuapp.com/addUnivPostToAdmin",
+      "https://collegedost.cyclic.app/addUnivPostToAdmin",
       { id },
       {
         headers: {

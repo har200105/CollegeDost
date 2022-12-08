@@ -1,9 +1,8 @@
 import React from "react";
 import "./Admin.css";
-import DeleteIcon from "@material-ui/icons/Delete";
 import axios from 'axios';
-import { Button } from "@material-ui/core";
 import { API } from "./API";
+
 export default function AdminPost(props) {
   
   const deletePost = async(id)=>{
@@ -13,7 +12,6 @@ export default function AdminPost(props) {
       }
     });
 
-    console.log(dp);
 
     if(dp.status===201){
       window.location.reload();
@@ -29,7 +27,6 @@ export default function AdminPost(props) {
       }
     });
 
-    console.log(dp);
 
     if(dp.status===201){
       window.location.reload();

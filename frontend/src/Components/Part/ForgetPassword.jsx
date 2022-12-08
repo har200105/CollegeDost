@@ -1,26 +1,22 @@
-import React, { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import "./Login.css";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import { LoginContext } from "../../ContextProvider/ContextProvider";
-import { AccountContext } from "../../ContextProvider/AccountProvider";
 import "react-circular-progressbar/dist/styles.css";
 import { Helmet } from "react-helmet";
-import ChangingProgressProvider from "./ChangingProgress";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { API } from "./API";
 
 
 
-const ForgotPassword = (props) => {
-    const { account, setAccount, showloginButton, setShowloginButton, showlogoutButton, setShowlogoutButton } = useContext(AccountContext);
+const ForgotPassword = () => {
+
     const [isActive, setActive] = useState("false");
     const [message, setMessage] = useState("");
     const [email, setEmail] = useState("");
-    const history = useHistory();
+
+
     const handleToggle = () => {
         setActive(!isActive);
     };
@@ -28,13 +24,14 @@ const ForgotPassword = (props) => {
 
     const sendLink = async (e) => {
         e.preventDefault();
+
         if (!email) {
             setMessage("Please add a Valid Email");
         }
         const pass = await axios.post(`${API}/forgotPassword`, {
             email
         });
-        console.log(pass.data);
+
         if (pass.data.success) {
             setEmail("");
             setMessage("You have been sent an verification link to change your password,Please do check in your spam folder too");

@@ -128,7 +128,7 @@ export default function CollegeQuestion(props) {
   const addToAdmin = async (id) => {
     console.log(id);
     await axios.post(
-      "https://collegedost.herokuapp.com/addUnivPostToAdmin",
+      "https://collegedost.cyclic.app/addUnivPostToAdmin",
       { id },
       {
         headers: {

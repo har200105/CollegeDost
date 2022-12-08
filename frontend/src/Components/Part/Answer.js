@@ -1,15 +1,9 @@
 import React from "react";
 import "./Answer.css";
-import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
-import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
-import { ChatBubble, ThumbDownAltOutlined } from "@material-ui/icons";
-import CommentModal from "./CommentModal";
-import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
 import { Link } from "react-router-dom";
 
-export default function Answer(props) {
-  console.log(props);
+export default function Answer() {
+  
   return (
     <div className="ans">
       <div className="user-title">

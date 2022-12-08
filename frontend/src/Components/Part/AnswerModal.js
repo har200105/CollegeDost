@@ -5,8 +5,6 @@ import "./Que.css";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import axios from "axios";
 import { API } from "./API";
-import { Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
 import { useDispatch } from "react-redux";
 import { getAllPosts, getThisUserAllposts, getThisUserUnivposts, getUserposts, getUserUnivposts } from "../../actions/postAction";
 import { getCollegePosts } from "../../actions/collegePostAction";
