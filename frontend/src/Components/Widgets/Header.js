@@ -4,8 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Link, useHistory } from "react-router-dom";
 import logo from "./clg-dost.png";
 import { useState } from "react";
-import axios from "axios";
-import { List, ListItem } from "@material-ui/core";
+
 
 export default function Header() {
   const [searchs, setSearch] = useState("");
@@ -16,19 +15,7 @@ export default function Header() {
     history.push("/");
     window.location.reload();
   };
-  // const[resource,setResource]=useState([]);
-  // const [ open, setOpen ] = useState(true)
-  // const getSearched=async(text)=>{
-  //   const response = await axios.post('http://localhost:7000/getSearched',{
-  //     query:text
-  //   },{
-  //     headers:{
-  //       "Authorization": "CollegeDost " + localStorage.getItem("jwt")
-  //     }
-  //   });
-  //   console.log(response.data);
-  //   setResource(response.data);
-  // }
+
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark ">

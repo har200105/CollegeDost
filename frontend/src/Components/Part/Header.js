@@ -4,8 +4,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Link, useHistory } from "react-router-dom";
 import logo from "./clg-dost.png";
 import { useState } from "react";
-import axios from "axios";
-import { List, ListItem } from "@material-ui/core";
 import { useSelector } from "react-redux";
 
 export default function Header() {

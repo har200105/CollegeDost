@@ -1,32 +1,20 @@
 import { React, useState } from "react";
-import Question from "./Que";
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import "./Home.css";
-import Editor from "./Editor";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import Answer from "./Answer";
 import axios from "axios";
-import CommentModal from "./CommentModal";
 import { useEffect } from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
-import land from "./DrawKit-daily-life-vector-illustrations/PNG/1.png";
-import ShadowScrollbars from "./ShadowScrollbars";
-import AwesomeSlider from "react-awesome-slider";
+import land from "./assets/1.png";
 import "react-awesome-slider/dist/styles.css";
 import Header from "./Header.js";
-import Footer from "./Footer";
-import Content from "./Content";
-import land1 from "./landing_1.jpg";
-import SecFooter from "./SecFooter";
-import HashTagContent from "./HashTagPosts";
 import {Link, useLocation} from 'react-router-dom';
 import "./Home.css";
 import CollegeQuestion from "./CollegeQuestion";
 import { API } from "./API";
 
-export default function HashTagCollege({match}) {
+export default function HashTagCollege() {
+
   const [posts, setPosts] = useState([]);
   const[hashTag,setHashTag]=useState([]);
   const {search} =  useLocation();
@@ -61,7 +49,7 @@ export default function HashTagCollege({match}) {
   }, []);
   return (
     <div className="home">
-    <div >
+    <div>
     <Header />
     <div className="landing">
       <img
@@ -90,9 +78,6 @@ export default function HashTagCollege({match}) {
     }
       
       <div className="secnav-items add-Question">
-        {/* <button className="btn btn-outline-success">
-          <b>+</b>
-        </button> */}
       </div>
     </div>
     </div>

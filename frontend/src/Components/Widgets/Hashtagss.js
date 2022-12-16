@@ -10,7 +10,7 @@ import axios from "axios";
 import CommentModal from "./CommentModal";
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import land from "../Part/DrawKit-daily-life-vector-illustrations/PNG/1.png";
+import land from "../Part/assets/1.png";
 import ShadowScrollbars from "./ShadowScrollbars";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";

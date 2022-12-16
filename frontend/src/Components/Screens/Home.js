@@ -1,7 +1,7 @@
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
 import React,{ useState } from "react";
-import land from "../Part/DrawKit-daily-life-vector-illustrations/PNG/1.png";
+import land from "../Part/assets/1.png";
 import Question from "./Que";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import ShadowScrollbars from "./ShadowScrollbars";

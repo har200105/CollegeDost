@@ -9,7 +9,6 @@ export const getCollegePosts = () => async(dispatch)=>{
                 "Authorization":localStorage.getItem("jwt")
             }
         });
-        console.log(response.data);
         dispatch({type:'GET_CLG_POST_SUCCESS',payload:response.data.post})
     }catch(e){
         dispatch({type:'GET_CLG_POST_FAIL',payload:e})

@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Que.css";
-import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
-import { ChatBubble, ThumbDownAltOutlined } from "@material-ui/icons";
-import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
+import {  ThumbDownAltOutlined } from "@material-ui/icons";
 import Answer from "./Answer";
 import axios from "axios";
 import AnswerModal from "./AnswerModal";
@@ -23,7 +20,6 @@ function Alert(props) {
 
 export default function Question(props) {
   const [user, setUser] = useState([]);
-  // const[currentUser,setCurrentUser] = useState({});
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
   const [opend, setOpend] = useState(false);

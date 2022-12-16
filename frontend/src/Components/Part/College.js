@@ -1,26 +1,19 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import land from "./DrawKit-daily-life-vector-illustrations/PNG/1.png";
-import Question from "./Que";
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-import ShadowScrollbars from "./ShadowScrollbars";
-import AwesomeSlider from "react-awesome-slider";
+import land from "./assets/1.png";
 import "react-awesome-slider/dist/styles.css";
-import axios from "axios";
 import Header from "./Header.js";
 import Footer from "./Footer";
 import SecFooter from "./SecFooter";
-import Content from "./Content";
 import "./Home.css";
 import { Link } from 'react-router-dom';
-import land1 from "./landing_1.jpg";
 import UnivContent from "../UnivContent";
-import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
-import { API } from "./API";
 import { useDispatch, useSelector } from "react-redux";
 import { getCollegeHashTags } from "../../actions/hashTagAction";
+
+
 export default function College() {
 
 

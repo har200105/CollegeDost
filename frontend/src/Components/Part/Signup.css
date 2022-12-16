@@ -9,9 +9,6 @@
   height: 100%;
   scroll-behavior: inherit;
   box-sizing: border-box;
-  /* background: -webkit-linear-gradient(bottom right, #010101, #585f66);
-  background: -moz-linear-gradient(bottom right, #010101, #585f66);
-  background: linear-gradient(to top left, #010101, #585f66); */
 }
 
 .signup {
@@ -42,7 +39,6 @@
 
 .signup form {
   width: 80%;
-  /* scroll-behavior: auto; */
   margin-top: 10vh;
   margin-left: 10%;
   color: white;

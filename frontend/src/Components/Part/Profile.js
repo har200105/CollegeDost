@@ -1,17 +1,12 @@
 import React from "react";
 import Header from "./Header";
 import Post from "./Que";
-import Answer from "./Answer";
+
 import "./Profile.css";
 import { useEffect } from "react";
-import { useState } from "react";
-import { useContext } from "react";
-import { AuthContext, LoginContext } from "../../ContextProvider/ContextProvider";
-import axios from "axios";
 import Footer from "./Footer";
 import { Helmet } from "react-helmet";
 import CollegeQuestion from "./CollegeQuestion";
-import { API } from "./API";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserposts, getUserUnivposts } from "../../actions/postAction";
@@ -19,7 +14,6 @@ import { getUserposts, getUserUnivposts } from "../../actions/postAction";
 
 const Profile = () => {
 
-  // const { user } = useContext(AuthContext);
    const { user,isAuthenticated } = useSelector((state) => state.loadUserReducer);
   const {posts} = useSelector((state) => state.getUserAllPostsReducer);
   const { univposts } = useSelector((state) => state.getUserUnivPostsReducer);

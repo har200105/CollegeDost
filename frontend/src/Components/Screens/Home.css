@@ -321,8 +321,6 @@
   }
   .landing-img {
     margin: auto;
-    /* margin-left: auto !important;
-        margin-right: auto !important; */
     height: 600px !important;
     width: 600px !important;
   }

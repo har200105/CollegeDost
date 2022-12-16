@@ -1,24 +1,20 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import land from "../Part/DrawKit-daily-life-vector-illustrations/PNG/1.png";
-import Question from "../Widgets/Que";
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-import ShadowScrollbars from "../Widgets/ShadowScrollbars";
-import AwesomeSlider from "react-awesome-slider";
+import land from "../Part/assets/1.png";
 import "react-awesome-slider/dist/styles.css";
 import axios from "axios";
 import Header from "../Widgets/Header";
 import Footer from "../Widgets/Footer";
 import SecFooter from "./SecFooter";
-// import Content from "./Content";
 import "./Home.css";
 import {Link} from 'react-router-dom';
-import land1 from "./landing_1.jpg";
 import UnivContent from './UnivContent'
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
 import { API } from "../Widgets/API";
+
+
 export default function College() {
   const[hashTag,setHashTag]=useState([]);
 

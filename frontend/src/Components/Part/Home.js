@@ -1,25 +1,20 @@
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
-import React, { useState } from "react";
-import land from "./DrawKit-daily-life-vector-illustrations/PNG/1.png";
-import Question from "./Que";
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-import ShadowScrollbars from "./ShadowScrollbars";
-import AwesomeSlider from "react-awesome-slider";
+import React from "react";
+import land from "./assets/1.png";
+
 import "react-awesome-slider/dist/styles.css";
 import Header from "./Header.js";
 import Footer from "./Footer";
 import Content from "./Content";
-import land1 from "./landing_1.jpg";
+
 import SecFooter from "./SecFooter";
-import CommentModal from "./CommentModal";
-import axios from "axios";
-import HashTagContent from "./HashTagPosts";
-import { Link, useLocation } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "bootstrap/dist/js/bootstrap.js";
-import { API } from "./API";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getAllHashtags } from "../../actions/hashTagAction";
 
