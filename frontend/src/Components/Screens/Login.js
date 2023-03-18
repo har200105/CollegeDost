@@ -41,11 +41,7 @@ const Login = (props) => {
       const url = `${API}/login`;
       const res = await axios.post(url, login);
       res1 = res.data;
-
-      console.log(res1);
-      console.log("efvbhwefb");
     } else {
-      console.log("Fake");
       setError("Please Enter your Email and Password");
       setShow(false);
       return;
@@ -53,17 +49,13 @@ const Login = (props) => {
 
     if (res1) {
       if (res1.error) {
-        console.log("Fake");
         setError("Invalid Credentials");
         setShow(false);
         return;
       } else {
-        console.log(res1.token);
         setAccount(res1);
-        console.log(res1.user);
         localStorage.setItem("jwt", res1.token);
         localStorage.setItem("user", JSON.stringify(res1.user));
-        // console.log(JSON.parse(localStorage.getItem("user")).isAdmin);
         history.push("/home");
         setShow(false);
       }

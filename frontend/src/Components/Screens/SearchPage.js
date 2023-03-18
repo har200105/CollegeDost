@@ -14,7 +14,6 @@ export default function SearchResources() {
   const [univresources, setUnivresources] = useState([]);
 
   const { search } = useLocation();
-  console.log(search);
   const getAllResources = async () => {
     const resources = await axios.post(
       `${API}/getSearched`,
@@ -27,7 +26,6 @@ export default function SearchResources() {
         },
       }
     );
-    console.log(resources.data);
     setUnivresources(resources.data);
   };
 

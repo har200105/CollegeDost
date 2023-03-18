@@ -27,8 +27,6 @@ export default function HashTagCollege({match}) {
       }
     });
 
-    console.log(ps);
-
   setPosts(ps.data);
 
   const d = await axios.get(`${API}/topHashtagsUniv`,{

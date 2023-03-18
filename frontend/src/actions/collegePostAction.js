@@ -45,7 +45,3 @@ export const getRecentCollegePosts = () => async(dispatch) =>{
         dispatch({type:'GET_RECENTPOST_CLG_FAIL',payload:e});
     }
 }
-
-export const getUserUnivPosts = () => async(dispatch) =>{
-    
-}

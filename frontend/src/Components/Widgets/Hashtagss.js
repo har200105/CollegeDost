@@ -38,7 +38,6 @@ export default function HashTag({match}) {
   }
 
   const {search} =  useLocation();
-  console.log(search.replace("?","#"));
   const getHashTagPosts = async()=>{
     const ps = await axios.post(`${API}/getHashtags`,{
       hashtag:search.replace("?","#")
@@ -47,8 +46,6 @@ export default function HashTag({match}) {
         "Authorization": "CollegeDost " + localStorage.getItem("jwt"),
       }
     });
-
-    console.log(ps);
 
   setPosts(ps.data);
   }

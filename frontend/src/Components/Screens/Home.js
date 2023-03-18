@@ -14,31 +14,14 @@ import land1 from "./landing_1.jpg";
 import SecFooter from "./SecFooter";
 import CommentModal from "../Widgets/CommentModal";
 import axios from "axios";
-// import HashTagContent from "./HashTagPosts";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "bootstrap/dist/js/bootstrap.js";
 import { API } from "../Widgets/API";
 
 const Home = (props) => {
-  const [isHashtag, setHashtag] = useState(false);
   const [hashTag, setHashTag] = useState([]);
-  const location = useLocation();
-  // const getHashTagPosts = async(e)=>{
-  //   console.log(e.target.text);
-  //   const ps = await axios.post('http://localhost:7000/getHashtags',{
-  //     hashtag:e.target.text.toString()
-  //   },{
-  //     headers:{
-  //       "Authorization": "CollegeDost " + localStorage.getItem("jwt"),
-  //     }
-  //   });
-
-  //   console.log(ps);
-
-  // setHashTagPosts(ps.data);
-  // }
 
   const getLastestHashtags = async (e) => {
     const d = await axios.get(`${API}/topHashtags`, {

@@ -62,16 +62,11 @@ export default function Question(props) {
     }
   };
   useEffect(() => {
-    // setCurrent(JSON.parse(localStorage.getItem("user")));
-    // setCurrent(JSON.parse(localStorage.getItem("user")))
     setCurrent(JSON.parse(localStorage.getItem("user")));
-    console.log(JSON.parse(localStorage.getItem("user")))
   }, []);
   const likePost = async (postId) => {
     await takeBackDislike(postId);
     handleClick();
-    console.log("Liking");
-    console.log(postId);
     await axios
       .put(
         `${API}/mainlike`,
@@ -81,16 +76,10 @@ export default function Question(props) {
             Authorization: "CollegeDost " + localStorage.getItem("jwt"),
           },
         }
-      )
-      .then((res) => {})
-      .catch((e) => {
-        console.log("Error  :" + e);
-      });
+      );
   };
 
   const takeBackLike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackmainlike`,
@@ -100,21 +89,12 @@ export default function Question(props) {
             Authorization: "CollegeDost " + localStorage.getItem("jwt"),
           },
         }
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => {
-        console.log("Error  :" + e);
-      });
+      );
   };
 
   const dislike = async (id) => {
     await takeBackLike(id);
-    // let newData;
     handleClickd();
-    console.log("Liking");
-    console.log(id);
     axios
       .put(
         `${API}/maindislike`,
@@ -124,16 +104,10 @@ export default function Question(props) {
             Authorization: "CollegeDost " + localStorage.getItem("jwt"),
           },
         }
-      )
-      .then((res) => {})
-      .catch((e) => {
-        console.log("Error  :" + e);
-      });
+      );
   };
 
   const takeBackDislike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackmaindislike`,
@@ -143,13 +117,7 @@ export default function Question(props) {
             Authorization: "CollegeDost " + localStorage.getItem("jwt"),
           },
         }
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => {
-        console.log("Error  :" + e);
-      });
+      );
   };
 
   const deletePost = async (id) => {
@@ -164,12 +132,10 @@ export default function Question(props) {
 
     if (dp.status === 201) {
       window.location.reload();
-      console.log("Post Deleted");
     }
   };
 
   const addToAdmin = async (id) => {
-    console.log(id);
     await axios.post(
       `${API}/addPostToAdmin`,
       { id },

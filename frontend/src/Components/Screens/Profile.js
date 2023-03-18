@@ -28,7 +28,6 @@ export default function Profile() {
 
     if (pi.status === 201) {
       setUserPosts(pi.data);
-      console.log(pi.data);
     }
 
     const pis = await axios.get(
@@ -39,10 +38,8 @@ export default function Profile() {
         },
       }
     );
-    console.log("user");
     if (pis.status === 201) {
       setUniv(pis.data);
-      console.log("univ : " + pis.data);
     }
   };
   useEffect(() => {

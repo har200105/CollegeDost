@@ -62,9 +62,6 @@ export default function Resources() {
         },
       }
     );
-
-    console.log(resources.data);
-
     setUnivresources(resources.data.Recentresources);
   };
 
@@ -77,9 +74,8 @@ export default function Resources() {
   const [manualurl, setManualUrl] = useState("");
 
   const uploadFile = async (file) => {
-    console.log(file);
     const data = new FormData();
-    await data.append("file", file);
+    data.append("file", file);
     data.append("upload_preset", "collegedost");
     data.append("cloud_name", "CollegeDost");
     fetch("https://api.cloudinary.com/v1_1/collegedost/raw/upload ", {
@@ -88,8 +84,6 @@ export default function Resources() {
     })
       .then((res) => res.json())
       .then((data) => {
-
-        console.log(data.secure_url);
         setFileUrl(data.secure_url);
         handleClick();
       });
@@ -110,7 +104,6 @@ export default function Resources() {
     );
     if (uploadingResource.status === 201) {
       handleClickd();
-      console.log("Resource Uploaded");
       setManualUrl("");
       setResourceName("");
       setFileUrl("");
@@ -118,9 +111,6 @@ export default function Resources() {
   };
 
   const onDrop = useCallback((acceptedFiles) => {
-    console.log("File accepted.....");
-    console.log(acceptedFiles);
-    console.log(acceptedFiles[0].path);
     uploadFile(acceptedFiles[0]);
   });
   return (

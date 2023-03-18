@@ -254,7 +254,6 @@ router.put('/takebackmainlike', reqLogin, async (req, res) => {
 
 
 router.put('/maindislike', reqLogin, async (req, res) => {
-    console.log(req.body.id)
     await AllPost.findByIdAndUpdate(req.body.id, {
         $push: {
             dislikes: req.user._id

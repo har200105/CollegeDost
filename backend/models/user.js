@@ -57,14 +57,12 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.createResetToken = async () => {
-    console.log("Method")
     const resetToken = crypto.randomBytes(32).toString('hex');
     this.resetToken = resetToken;
     return resetToken;
 }
 
 userSchema.methods.resetPasswordHandler = async (password) => {
-    console.log("PASSWORD")
     this.password = password;
 }
 

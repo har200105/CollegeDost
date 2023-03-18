@@ -29,7 +29,6 @@ const Login = (props) => {
   const inputChange = (e) => {
     setError("");
     setSignup({ ...signup, [e.target.name]: e.target.value });
-    console.log(signup);
   };
 
   const handleToggle = () => {
@@ -38,24 +37,18 @@ const Login = (props) => {
 
   const setAvatar = (e) => {
     e.preventDefault();
-    console.log(e.target.src);
     setAvatars(e.target.src);
     setSignup({ ...signup, [avatar]: avatar });
-    console.log(signup);
   };
 
   const getUnivs = async () => {
     const uni = await axios.get(`${API}/getUnivs`);
-    console.log(uni.data);
     setUnis(uni.data);
   };
 
   const collegeName = (e) => {
-    console.log(e.target.value);
     setUniversity(e.target.value);
     setSignup({ ...signup, [e.target.name]: e.target.value });
-    console.log(signup);
-    console.log(signup);
   };
 
   const SignupUser = async (e) => {
@@ -69,7 +62,6 @@ const Login = (props) => {
         setShow(false);
       }
     } else {
-      console.log("Enter a Valid Email");
       setShow(false);
       setError("Please Enter a Valid Email");
     }

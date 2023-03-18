@@ -33,7 +33,6 @@ export default function Admin() {
     const getUsers = await axios.post(`${API}/searchuser`, {
       query: usersr,
     });
-    console.log(getUsers.data);
     setUser(getUsers.data.user);
   };
 

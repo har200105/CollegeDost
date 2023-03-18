@@ -46,7 +46,6 @@ export default function Content() {
       `${API}/globalposts`
     );
     if (globalposts.data) {
-      console.log(globalposts.data.posts);
       setPosts(globalposts.data.posts);
     }
   };

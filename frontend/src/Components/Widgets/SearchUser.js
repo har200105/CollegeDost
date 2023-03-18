@@ -14,7 +14,6 @@ export default function SearchUser() {
   const [univresources, setUnivresources] = useState([]);
 
   const { search } = useLocation();
-  console.log(search);
   const getAllResources = async () => {
     const resources = await axios.post(
       `${API}/searchuser`,
@@ -22,7 +21,6 @@ export default function SearchUser() {
         query: search.replace("?", ""),
       }
     );
-    console.log(resources.data);
     setUnivresources(resources.data.user);
   };
 

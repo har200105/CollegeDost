@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../Widgets/Header";
 import Post from "./Que";
-// import Answer from "./Answer";
 import "./Profile.css";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -12,10 +11,9 @@ import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Footer from "../Widgets/Footer";
 import { API } from "../Widgets/API";
+
 const  UserProfile=() =>{
-    const {account,setAccount} = useContext(LoginContext);
     const{search}=useLocation();
-    console.log(search);
     const id = search.replace("?","");
     const[user,setUser] = useState([]);
     const[posts,setUserPosts]=useState([]);
@@ -29,7 +27,6 @@ const  UserProfile=() =>{
         
         if(pi.status===201){
             setUserPosts(pi.data);
-            console.log(pi.data);
         }
 
         const pis = await axios.get(`${API}/getUnivUserPostById/${id}`,{
@@ -40,7 +37,6 @@ const  UserProfile=() =>{
     
         if(pis.status===201){
           setUniv(pis.data);
-          console.log(pis.data);
         }
 
 
@@ -51,7 +47,6 @@ const  UserProfile=() =>{
         });
         if(u.status===201){
             setUser(u.data);
-            console.log(u.data);
         }
 
 

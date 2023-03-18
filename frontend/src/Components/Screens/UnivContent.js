@@ -38,7 +38,6 @@ export default function UnivContent() {
       }
     );
     setPosts(univposts.data.post);
-    console.log(univposts.data.post);
 
     const getRecentResources = await axios.get(
       `${API}/getRecentResources`,
