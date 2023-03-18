@@ -1,11 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import "./Signup.css";
 import "./Login.css";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import { LoginContext } from "../../ContextProvider/ContextProvider";
 import { AccountContext } from "../../ContextProvider/AccountProvider";
 import "react-circular-progressbar/dist/styles.css";
 import { Helmet } from "react-helmet";

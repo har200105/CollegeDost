@@ -2,17 +2,11 @@ import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
 import React,{ useState } from "react";
 import land from "../Part/assets/1.png";
-import Question from "./Que";
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-import ShadowScrollbars from "./ShadowScrollbars";
-import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import Header from "../Widgets/Header";
 import Footer from '../Widgets/Footer'
 import Content from "../Widgets/Content";
-import land1 from "./landing_1.jpg";
 import SecFooter from "./SecFooter";
-import CommentModal from "../Widgets/CommentModal";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -20,7 +14,7 @@ import { Helmet } from "react-helmet";
 import "bootstrap/dist/js/bootstrap.js";
 import { API } from "../Widgets/API";
 
-const Home = (props) => {
+const Home = () => {
   const [hashTag, setHashTag] = useState([]);
 
   const getLastestHashtags = async (e) => {
