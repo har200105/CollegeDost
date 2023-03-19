@@ -5,14 +5,9 @@ import axios from "axios";
 import { API } from "./API";
 export default function User(props) {
   const deleteUser=async()=>{
-    const deleteUser = await axios.post(`${API}/deleteUser`,{
+    await axios.post(`${API}/deleteUser`,{
       query:props.u._id
     });
-
-    if(deleteUser.status===201){
-      console.log("User Deleted");
-    }
-
   }
   return (
     <div className="user">

@@ -12,12 +12,8 @@ export default function AdminPost(props) {
         Authorization: "CollegeDost " + localStorage.getItem("jwt"),
       }
     });
-
-    console.log(dp);
-
     if(dp.status===201){
       window.location.reload();
-      console.log("Post Deleted");
     }
   }
 
@@ -29,11 +25,8 @@ export default function AdminPost(props) {
       }
     });
 
-    console.log(dp);
-
     if(dp.status===201){
       window.location.reload();
-      console.log("Post Deleted");
     }
 
   }

@@ -72,8 +72,6 @@ export default function CollegeQuestion(props) {
   };
 
   const takeBackLike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackunivlike`,
@@ -84,11 +82,10 @@ export default function CollegeQuestion(props) {
           },
         }
       )
-      .then((res) => {
+      .then(() => {
         dispatch(getCollegePosts());
           dispatch(getUserposts());
         dispatch(getUserUnivposts());
-        console.log(res);
       })
       .catch((e) => {
         console.log("Error  :" + e);
@@ -109,12 +106,10 @@ export default function CollegeQuestion(props) {
       dispatch(getCollegePosts());
         dispatch(getUserposts());
         dispatch(getUserUnivposts());
-      console.log("Post Deleted");
     }
   };
 
   const addToAdmin = async (id) => {
-    console.log(id);
     await axios.post(
       "https://collegedost.cyclic.app/addUnivPostToAdmin",
       { id },
@@ -129,8 +124,6 @@ export default function CollegeQuestion(props) {
   const dislike = async (id) => {
     handleClickd();
     await takeBackLike(id);
-    console.log("Liking");
-    console.log(id);
     axios
       .put(
         `${API}/univdislike`,
@@ -152,8 +145,6 @@ export default function CollegeQuestion(props) {
   };
 
   const takeBackDislike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackunivdislike`,

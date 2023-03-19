@@ -30,7 +30,6 @@ const Login = (props) => {
 
   const inputChange = (e) => {
     setLogin({ ...login, [e.target.name]: e.target.value });
-    console.log(login);
   };
 
   const LoginUser = async (e) => {

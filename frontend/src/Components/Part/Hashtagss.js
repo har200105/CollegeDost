@@ -40,8 +40,6 @@ export default function HashTag({match}) {
       }
     });
 
-    console.log(ps);
-
   setPosts(ps.data);
   }
   useEffect(() => {

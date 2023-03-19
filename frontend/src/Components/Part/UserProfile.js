@@ -32,7 +32,6 @@ const UserProfile = () => {
         });
         if(u.status===201){
             setUser(u.data);
-            console.log(u.data);
         }
   }
 

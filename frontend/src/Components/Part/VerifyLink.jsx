@@ -26,7 +26,6 @@ const VerifyLink = () => {
   const history = useHistory();
   const toast = useToast();
   const { token } = useParams();
-  console.log(token);
 
   const verifyUser = async (e) => {
     e.preventDefault();

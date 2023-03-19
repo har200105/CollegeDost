@@ -67,9 +67,8 @@ const Resources = () => {
   const [manualurl, setManualUrl] = useState("");
 
   const uploadFile = async (file) => {
-    console.log(file);
     const data = new FormData();
-    await data.append("file", file);
+    data.append("file", file);
     data.append("upload_preset", "collegedost");
     data.append("cloud_name", "CollegeDost");
     fetch("https://api.cloudinary.com/v1_1/collegedost/raw/upload ", {
@@ -107,9 +106,6 @@ const Resources = () => {
   };
 
   const onDrop = useCallback((acceptedFiles) => {
-    console.log("File accepted.....");
-    console.log(acceptedFiles);
-    console.log(acceptedFiles[0].path);
     uploadFile(acceptedFiles[0]);
   });
   return (

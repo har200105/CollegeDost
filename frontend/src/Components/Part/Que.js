@@ -93,8 +93,6 @@ export default function Question(props) {
   };
 
   const takeBackLike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackmainlike`,
@@ -111,7 +109,6 @@ export default function Question(props) {
         dispatch(getCollegePosts());
          dispatch(getThisUserAllposts(props.postedBy._id));
     dispatch(getThisUserUnivposts(props.postedBy._id));
-        console.log(res);
       })
       .catch((e) => {
         console.log("Error  :" + e);
@@ -121,8 +118,6 @@ export default function Question(props) {
   const dislike = async (id) => {
     await takeBackLike(id);
     handleClickd();
-    console.log("Liking");
-    console.log(id);
     axios
       .put(
         `${API}/maindislike`,
@@ -133,7 +128,7 @@ export default function Question(props) {
           },
         }
       )
-      .then((res) => {
+      .then(() => {
         dispatch(getAllPosts());
         dispatch(getUserposts());
         dispatch(getCollegePosts());
@@ -146,8 +141,6 @@ export default function Question(props) {
   };
 
   const takeBackDislike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackmaindislike`,

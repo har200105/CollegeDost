@@ -15,7 +15,6 @@ export default function AdminPost(props) {
 
     if(dp.status===201){
       window.location.reload();
-      console.log("Post Deleted");
     }
   }
 
@@ -30,7 +29,7 @@ export default function AdminPost(props) {
 
     if(dp.status===201){
       window.location.reload();
-      console.log("Post Deleted");
+
     }
 
   }

@@ -70,7 +70,6 @@ export const Editor = (props) => {
   };
   const handleChange = (value) => {
     setCaption(value);
-    console.log(value);
   };
 
 
@@ -86,7 +85,6 @@ export const Editor = (props) => {
          body:data
        }
        ).then(res=>res.json()).then(data=>{
-         console.log(data);
          setPic(data.url); 
        });
   }

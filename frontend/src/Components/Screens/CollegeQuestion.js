@@ -87,8 +87,6 @@ export default function CollegeQuestion(props) {
   };
 
   const takeBackLike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackunivlike`,
@@ -98,13 +96,7 @@ export default function CollegeQuestion(props) {
             Authorization: "CollegeDost " + localStorage.getItem("jwt"),
           },
         }
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => {
-        console.log("Error  :" + e);
-      });
+      );
   };
 
   const deletePost = async (id) => {
@@ -119,12 +111,10 @@ export default function CollegeQuestion(props) {
 
     if (dp.status === 201) {
       window.location.reload();
-      console.log("Post Deleted");
     }
   };
 
   const addToAdmin = async (id) => {
-    console.log(id);
     await axios.post(
       "https://collegedost.cyclic.app/addUnivPostToAdmin",
       { id },
@@ -139,9 +129,11 @@ export default function CollegeQuestion(props) {
   const dislike = async (id) => {
     handleClickd();
     await takeBackLike(id);
-    console.log("Liking");
-    console.log(id);
-    axios
+    await addDislike(id);
+  };
+
+const addDislike = async (id) => {
+     axios
       .put(
         `${API}/univdislike`,
         { id },
@@ -151,15 +143,9 @@ export default function CollegeQuestion(props) {
           },
         }
       )
-      .then((res) => {})
-      .catch((e) => {
-        console.log("Error  :" + e);
-      });
   };
 
   const takeBackDislike = async (id) => {
-    console.log("Liking");
-    console.log(id);
     await axios
       .put(
         `${API}/takebackunivdislike`,
@@ -169,13 +155,7 @@ export default function CollegeQuestion(props) {
             Authorization: "CollegeDost " + localStorage.getItem("jwt"),
           },
         }
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => {
-        console.log("Error  :" + e);
-      });
+      );
   };
 
   return (

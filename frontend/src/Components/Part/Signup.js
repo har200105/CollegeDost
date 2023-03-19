@@ -33,14 +33,12 @@ const Login = () => {
   const inputChange = (e) => {
     setError("");
     setSignup({ ...signup, [e.target.name]: e.target.value });
-    console.log(signup);
   };
 
   const setAvatar = (e) => {
     e.preventDefault();
     setAvatars(e.target.src);
     setSignup({ ...signup, avatar: avatar });
-    console.log(signup);
     toast({
       title: "Avatar Selected",
       status: "success",
@@ -51,12 +49,10 @@ const Login = () => {
 
   const getUnivs = async () => {
     const uni = await axios.get(`${API}/getUnivs`);
-    console.log(uni.data);
     setUnis(uni.data);
   };
 
   const collegeName = (e) => {
-    console.log(e.target.value);
     setUniversity(e.target.value);
     setSignup({ ...signup, [e.target.name]: e.target.value });
   };
@@ -86,7 +82,6 @@ const Login = () => {
         });
       }
     } else {
-      console.log("Enter a Valid Email");
       setShow(false);
       setError("Please Enter a Valid Email");
     }

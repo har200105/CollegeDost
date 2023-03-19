@@ -28,9 +28,6 @@ export default function HashTagCollege() {
         "Authorization": localStorage.getItem("jwt"),
       }
     });
-
-    console.log(ps);
-
   setPosts(ps.data);
 
   const d = await axios.get(`${API}/topHashtagsUniv`,{
