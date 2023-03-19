@@ -98,8 +98,8 @@ export default function Header() {
           <img
             className="profile_pic mr-2"
             src={
-              JSON.parse(localStorage.getItem("user")).avatar
-                ? JSON.parse(localStorage.getItem("user")).avatar
+              JSON.parse(localStorage.getItem("user"))?.avatar
+                ? JSON.parse(localStorage.getItem("user"))?.avatar
                 : "https://res.cloudinary.com/harshit111/image/upload/v1627476410/q1rjnignh5djpnujltyy.png"
             }
             style={{

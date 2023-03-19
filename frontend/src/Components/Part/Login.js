@@ -40,7 +40,8 @@ const Login = () => {
       const res = await axios.post(url, login);
       if (res.data.success) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user });
-        localStorage.setItem("jwt",res.data.token);
+        localStorage.setItem("jwt", res.data.token);
+        localStorage.setItem("user",JSON.stringify(res.data.user));
         dispatchFunction(loadUser());
       
         toast({

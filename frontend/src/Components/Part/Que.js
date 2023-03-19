@@ -64,7 +64,6 @@ export default function Question(props) {
   };
   useEffect(() => {
     setCurrent(JSON.parse(localStorage.getItem("user")));
-    console.log(JSON.parse(localStorage.getItem("user")));
   }, []);
 
   const likePost = async (postId) => {

@@ -29,7 +29,7 @@ export default function Footer() {
             <Link to="/profile">Profile</Link>
           </div>
 
-          {JSON.parse(localStorage.getItem("user")).isAdmin ? (
+          {JSON.parse(localStorage.getItem("user"))?.isAdmin ? (
             <div className="footer-link" style={{ fontSize: "1rem" }}>
               <Link to="/Admin">Admin</Link>
             </div>

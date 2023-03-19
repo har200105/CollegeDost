@@ -16,8 +16,6 @@ import { getCollegeHashTags } from "../../actions/hashTagAction";
 
 export default function College() {
 
-
-
   const dispatch = useDispatch();
   const UnivHashtags = useSelector(state => state.getCollegeHashTagsReducer);
   const { hashTagsUniv, loadinghashtaguniv, errorhashtaguniv } = UnivHashtags;

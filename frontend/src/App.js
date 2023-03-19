@@ -20,17 +20,22 @@ import VerifyLink from "./Components/Part/VerifyLink";
 import ResetPassword from "./Components/Part/ResetPassword";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./actions/userAction";
+import Loader from "./Components/Loader";
 
 function App() {
 
   const dispatch = useDispatch();
-  const { user,isAuthenticated } = useSelector((state) => state.loadUserReducer);
+  const { user, isAuthenticated, loading } = useSelector((state) => state.loadUserReducer);
 
   useEffect(() => {
     if (localStorage.getItem(`jwt`)) {
       dispatch(loadUser());
     }
   }, []);
+
+  if (loading) {
+    return <Loader/>
+  }
 
   return (
     <React.Fragment>
@@ -48,59 +53,55 @@ function App() {
               </Route>
 
               <Route exact path="/resources">
-                <Resources />
+                {isAuthenticated ? <Resources/> : <Redirect to="/Login"/> }
               </Route>
 
               <Route exact path="/College">
-                <College />
-              </Route>
-
-              <Route exact path="/Admindsds">
-                <Admin />
+                 {isAuthenticated ? <College/> : <Redirect to="/Login"/> }
               </Route>
 
               <Route exact path="/Profile">
-                <Profile />
+                 {isAuthenticated ? <Profile/> : <Redirect to="/Login"/> }
               </Route>
 
               <Route exact path="/home">
-                {isAuthenticated ? <Home /> : <Login />}
+                {isAuthenticated ? <Home /> : <Redirect to="/Login"/>}
               </Route>
 
               <Route exact path="/hashtag">
-                <HashTag />
+               {isAuthenticated ? <HashTag/> : <Redirect to="/Login"/> }
               </Route>
 
               <Route exact path="/hashtagCollege">
-                <HashTagCollege />
+                 {isAuthenticated ? <Resources/> : <Redirect to="/Login"/> }
               </Route>
 
               <Route exact path="/search">
-                <SearchResources />
+               {isAuthenticated  ? <SearchResources/> : <Redirect to="/Login"/>}
               </Route>
 
               <Route exact path="/forgotpassword">
-                <ForgetPassword />
+                {isAuthenticated ? <ForgetPassword/> : <Redirect to="/Login"/>}
               </Route>
 
               <Route exact path="/searchUser">
-                <SearchUser />
+                {isAuthenticated ? <SearchUser /> :  <Redirect to="/Login"/>}
               </Route>
 
               <Route exact path="/user">
-                <UserProfile />
+                {isAuthenticated ? <UserProfile/>: <Redirect to="/Login"/>}
               </Route>
 
                 <Route exact path="/forgetPassword">
-                <ForgetPassword />
+               {isAuthenticated ? <Redirect to="/home"/> : <ForgetPassword />}
               </Route>
 
                <Route exact path="/resetPassword/:token">
-                <ResetPassword />
+                {isAuthenticated ? <Redirect to="/home" /> : <ResetPassword />}
               </Route>
 
               <Route exact path="/verify">
-                <VerifyLink />
+               {isAuthenticated ? <Redirect to="/home"/> : <VerifyLink />}
               </Route>
 
             </Switch>

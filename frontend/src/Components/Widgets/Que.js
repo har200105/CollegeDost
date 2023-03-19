@@ -269,9 +269,6 @@ export default function Question(props) {
           </button>
         )}
         <button className="answer">
-          {/* {
-            !current.isAdmin ? <DeleteOutlinedIcon/> : <div>s</div>
-          } */}
           <AnswerModal
             text={text}
             setText={setText}
