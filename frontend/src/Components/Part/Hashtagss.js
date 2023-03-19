@@ -1,17 +1,12 @@
 import { React, useState } from "react";
 import Question from "./Que";
-
 import "./Home.css";
-
 import "react-quill/dist/quill.snow.css";
-
 import axios from "axios";
-
 import { useEffect } from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
 import land from "./assets/1.png";
-
 import "react-awesome-slider/dist/styles.css";
 import Header from "./Header.js";
 import {Link, useLocation} from 'react-router-dom';

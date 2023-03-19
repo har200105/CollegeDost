@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Resources.css";
-import { useCallback } from "react";
 import axios from "axios";
-import Dropzone from "./Dropzone";
 import Header from "./Header";
-import { Link, useLocation } from "react-router-dom";
-import DownloadLink from "react-download-link";
+import { useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import SecFooter from "./SecFooter";
 import "./Home.css";
 import { API } from "./API";
+
+
 export default function SearchResources() {
   const [univresources, setUnivresources] = useState([]);
 

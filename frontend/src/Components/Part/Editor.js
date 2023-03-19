@@ -91,14 +91,6 @@ export const Editor = (props) => {
        });
   }
 
-  
-  const reset=(e)=>{
-      console.log(e);
-      setShareImage("");
-      setPic("");
-      setCaption("");
-  }
-
   useEffect(()=>{
       if(shareImage!==""){
           uploadingPic();
