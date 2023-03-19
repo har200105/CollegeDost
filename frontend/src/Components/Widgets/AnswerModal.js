@@ -96,17 +96,6 @@ const AnswerModal = (props) => {
       setShowModal(false);
     }
   };
-  // this.handleOpenModal = this.handleOpenModal.bind(this);
-  // this.handleCloseModal = this.handleCloseModal.bind(this);
-  // handleOpenModal() {
-  //   this.setState({ showModal: true });
-  // }
-  // handleCloseModal() {
-  //   this.setState({ showModal: false });
-  // }
-  // handleText(s){
-  //   this.setState({text:s})
-  // }
 
   return (
     <div>
@@ -132,8 +121,6 @@ const AnswerModal = (props) => {
 
 
       <ReactModal
-        style={{
-        }}
         className="Modal"
         overlayClassName="Overlay"
         isOpen={showModal}

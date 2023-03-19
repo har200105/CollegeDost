@@ -99,11 +99,6 @@ export const Editor = (props) => {
       setCaption("");
   }
 
-
-
-
-
-
   useEffect(()=>{
       if(shareImage!==""){
           uploadingPic();

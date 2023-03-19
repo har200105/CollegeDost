@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Signup.css";
@@ -17,8 +16,8 @@ const LoginValues = {
   password: "",
 };
 
-const Login = (props) => {
-  const {user,isFetching,dispatch} = useContext(AuthContext);
+const Login = () => {
+  const {dispatch} = useContext(AuthContext);
   const [isActive, setActive] = useState("false");
   const [login, setLogin] = useState(LoginValues);
   const [show, setShow] = useState(false);
@@ -38,19 +37,16 @@ const Login = (props) => {
       const url = `${API}/login`;
       const res = await axios.post(url, login);
       if (res.data.success) {
-        console.log(res.data);
-        const {url} = res.data;
-        window.location.href = url;
-        // dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user });
-        // localStorage.setItem("jwt",res.data.token);
-        // dispatch(loadUser());
+        dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user });
+        localStorage.setItem("jwt",res.data.token);
+        dispatch(loadUser());
       
-      //   toast({
-      //     title: "Success",
-      //     description: "Login Successfull",
-      //     status: "success",
-      //     isClosable:false
-      // });
+        toast({
+          title: "Success",
+          description: "Login Successfull",
+          status: "success",
+          isClosable:false
+      });
         
       } else if (!res.data.success) {
          toast({

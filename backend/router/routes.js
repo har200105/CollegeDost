@@ -56,7 +56,6 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
-    console.log(req.body);
     if (!email || !password) {
         return res.status(422).json({success:false,message: "Please add email and password both" })
     }
@@ -89,7 +88,7 @@ router.post("/login", async (req, res) => {
 router.post("/createglobalpost", reqLogin, async (req, res) => {
     const { body } = req.body;
     if (!body) {
-        res.status(422).json({ error: "Kuch toh daldo" });
+        res.status(422).json({ error: "Body is required for the post" });
     }
     const post = new AllPost({
         body: req.body.body,
@@ -107,19 +106,14 @@ router.post("/createglobalpost", reqLogin, async (req, res) => {
                     }
                 });
                 if (!findHashtag) {
-                    const hashtag = await new HashtagPost({
+                    const hashtag = new HashtagPost({
                         hashTagtext: req.body.hashtag[i].toString(),
                     });
-                    await hashtag.save().then((resd) => {
-                        console.log(hashtag);
-                    })
-                } else {
-                    console.log("Else Block");
+                    await hashtag.save();
                 }
             }
         }
-        res.json({ post: result })
-        console.log("Successfully posted" + result);
+        res.status(201).json({ post: result })
     })
         .catch(err => {
             console.log(err);
@@ -156,17 +150,12 @@ router.post("/createuniversitypost", reqLogin, async (req, res) => {
                         universityName: req.user.university
 
                     });
-                    await hashtag.save().then((resd) => {
-
-                        console.log(hashtag);
-                    })
-                } else {
-                    console.log("Else Block");
+                    await hashtag.save();
                 }
             }
         }
 
-        res.json({ post: result })
+        res.status(201).json({ post: result })
     })
         .catch(err => {
             console.log(err);
@@ -180,8 +169,8 @@ router.get('/globalposts', reqLogin, async (req, res) => {
         .sort('-createdAt')
         .populate("postedBy", "email name university avatar _id")
         .populate("comments.commentedBy", "name email avatar")
-        .then(posts => {
-            res.json({ posts })
+        .then((posts) => {
+            res.status(200).json({ posts })
         })
         .catch((err) => {
             console.log(err)
@@ -362,8 +351,7 @@ router.put('/maincomment', reqLogin, async (req, res) => {
 
 router.get('/getUnivs', async (req, res) => {
     const getUni = await UniversityData.find({});
-    console.log(getUni);
-        res.status(201).json(getUni);
+    res.status(201).json(getUni);
 });
 
 
@@ -408,9 +396,6 @@ router.delete('/maindelete/:postId', reqLogin, (req, res) => {
             }
         })
 });
-
-
-
 
 
 router.delete('/univdelete/:postId', reqLogin, (req, res) => {
@@ -508,8 +493,6 @@ router.post('/addPostToAdmin', reqLogin, async (req, res) => {
 });
 
 
-
-
 router.post('/addUnivPostToAdmin', reqLogin, async (req, res) => {
     const reportedPost = await UnivPost.findById(req.body.id);
     if (reportedPost) {
@@ -548,16 +531,16 @@ router.get('/getAdminPosts', async (req, res) => {
 
 
 router.get('/topHashtags', reqLogin, async (req, res) => {
-    await HashtagPost.find({}).sort("-postCounts").limit(5).then((da) => {
-        res.status(201).json(da)
+    await HashtagPost.find({}).sort("-postCounts").limit(5).then((data) => {
+        res.status(201).json(data);
     });
 });
 
 router.get('/topHashtagsUniv', reqLogin, async (req, res) => {
     await HashTagUniv.find({ universityName: req.user.university })
         .sort("-postCounts")
-        .limit(5).then((s) => {
-            res.status(201).json(s)
+        .limit(5).then((data) => {
+            res.status(201).json(data)
         })
 });
 
@@ -588,9 +571,7 @@ router.get('/getUserPost', reqLogin, async (req, res) => {
         .sort('-createdAt')
         .populate("postedBy", "email name university avatar _id")
         .populate("comments.commentedBy", "name email _id avatar")
-    if (pd) {
         res.status(201).json(pd);
-    }
 });
 
 
@@ -599,16 +580,14 @@ router.get('/getUnivUserPost', reqLogin, async (req, res) => {
         .sort('-createdAt')
         .populate("postedBy", "email name university avatar _id")
         .populate("comments.commentedBy", "name email _id avatar")
-    if (pd) {
         res.status(201).json(pd);
-    }
 });
 
 router.get('/getRecentResources', reqLogin, async (req, res) => {
     const resourceLatest = await Resources.find({ resourceUniversityName: req.user.university })
         .populate("resourceUploaderName", "name")
         .sort("-createdAt")
-        .limit(5)
+        .limit(5);
 
     if (resourceLatest) {
         res.status(201).json(resourceLatest);

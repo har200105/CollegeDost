@@ -1,11 +1,5 @@
 import React from "react";
 import "./Answer.css";
-import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
-import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
-import { ChatBubble, ThumbDownAltOutlined } from "@material-ui/icons";
-import CommentModal from "./CommentModal";
-import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
 
 export default function Answer(props) {
   return (

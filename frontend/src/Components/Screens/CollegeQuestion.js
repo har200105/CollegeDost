@@ -71,8 +71,6 @@ export default function CollegeQuestion(props) {
   }, []);
   const likePost = async (postId) => {
     await takeBackDislike(postId);
-    console.log("Liking");
-    console.log(postId);
     await axios.put(
         `${API}/univlike`,
         { postId },
