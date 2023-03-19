@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import "./Login.css";
+import { useDispatch } from "react-redux";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
 import "react-circular-progressbar/dist/styles.css";
 import { Helmet } from "react-helmet";
@@ -22,6 +23,7 @@ const Login = () => {
   const [login, setLogin] = useState(LoginValues);
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
+  const dispatchFunction = useDispatch();
 
   const toast = useToast();
 
@@ -39,7 +41,7 @@ const Login = () => {
       if (res.data.success) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user });
         localStorage.setItem("jwt",res.data.token);
-        dispatch(loadUser());
+        dispatchFunction(loadUser());
       
         toast({
           title: "Success",
