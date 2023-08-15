@@ -13,6 +13,7 @@ export const loadUser = () => async(dispatch)=>{
         console.log(response.data);
         dispatch({type:'LOAD_USER_SUCCESS',payload:response.data.user})
     }catch(e){
+        localStorage.removeItem(`jwt`);
         dispatch({type:'LOAD_USER_FAIL',payload:e})
     }
 }

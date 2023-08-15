@@ -18,25 +18,6 @@ export const LikeAllPost = (id) => async (dispatch) => {
 }
 
 
-// export const takeBackAllPostLike = (id) => async (dispatch) => {
-//     try {
-//         const response = await axios.post(`${API}/`, {
-//             postId: id
-//         }, {
-//             headers: {
-//                 Authorization: localStorage.getItem("jwt"),
-//             }
-//         });
-//         if (response.status === 201) {
-//             dispatch({ type: 'TAKE_ALLPOST_SUCCESS' });
-//         }
-//     } catch (e) {
-//         dispatch({ type: 'TAKE_ALLPOST_FAIL', payload: e })
-//     }
-// }
-
-
-
 export const LikeUnivPost = (id) => async (dispatch) => {
     try {
         const response = await axios.post(`${API}/univlike`, {
@@ -122,21 +103,3 @@ export const disLikeUnivPost = (id) => async (dispatch) => {
     }
 }
 
-
-
-// export const takeBackUnivPostLike = (id) => async (dispatch) => {
-//     try {
-//         const response = await axios.post(`${API}/`, {
-//             postId: id
-//         }, {
-//             headers: {
-//                 Authorization:  localStorage.getItem("jwt"),
-//             }
-//         });
-//         if (response.status === 201) {
-//             dispatch({ type: 'TAKE_UNIVPOST_SUCCESS' });
-//         }
-//     } catch (e) {
-//         dispatch({ type: 'TAKE_UNIVPOST_FAIL', payload: e })
-//     }
-// }
